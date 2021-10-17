@@ -1,0 +1,87 @@
+@font-face {
+  font-family: "Glass_TTY";
+  src: url("/assets/fonts/Glass_TTY_VT220.ttf");
+}
+.top-section-wrapper {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(287deg, #151567 0%, #6040ca 100.72%);
+  .top-section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    background: url("../../assets/images/airplanes.png") no-repeat;
+    background-position: 10% 85%;
+    .middle {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 80%;
+      .company-name {
+        font-weight: 600;
+        font-size: 3vw;
+        color: #ffffff;
+      }
+      .company-slogan {
+        position: relative;
+        .terminal {
+          ::placeholder {
+            font-family: "Glass_TTY";
+            font-size: 24px;
+            color: #aea1f1;
+            letter-spacing: 0.2em;
+            opacity: 1;
+          }
+          input {
+            font-family: "Glass_TTY";
+            font-size: 24px;
+            color: #aea1f1;
+            letter-spacing: 0.2em;
+            padding: 0;
+            border: none;
+          }
+        }
+        .MuiOutlinedInput-notchedOutline {
+          outline: none;
+          border-width: 0;
+        }
+        .slogan-text {
+          position: absolute;
+          top: -20px;
+          font-family: "Glass_TTY";
+          font-size: 24px;
+          color: #aea1f1;
+          letter-spacing: 0.2em;
+          &.hide {
+            display: none;
+          }
+        }
+      }
+      .right-side {
+        .main-illustration {
+          width: 100%;
+          height: 70vh;
+        }
+      }
+    }
+    .arrow-down {
+      position: absolute;
+      bottom: 85px;
+      .link {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@keyframes cursor {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

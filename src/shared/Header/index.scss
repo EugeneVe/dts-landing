@@ -1,0 +1,47 @@
+.header-wrapper {
+  width: 100%;
+  position: fixed;
+  background: linear-gradient(287deg, rgb(30, 26, 114) 0%, #6040ca 100.72%);
+  z-index: 1;
+  @media screen and (max-width: 900px) {
+    background: linear-gradient(287deg, rgb(34, 28, 120) 0%, #6040ca 100.72%);
+  }
+  @media screen and (max-width: 550px) {
+    background: linear-gradient(287deg, rgb(41, 32, 129) 0%, #6040ca 100.72%);
+  }
+  @media screen and (max-width: 370px) {
+    background: linear-gradient(287deg, rgb(47, 36, 137) 0%, #6040ca 100.72%);
+  }
+  .header {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    height: 100px;
+    .menu {
+      .link {
+        color: #fff;
+        text-transform: uppercase;
+        cursor: pointer;
+        padding: 10px;
+        font-weight: 500;
+        &:hover {
+          height: 40px;
+          border-radius: 4px;
+          background: #aea1f1;
+          color: #404040;
+        }
+        &:not(:last-child) {
+          margin-right: 1.5vw;
+        }
+        &.active {
+          background: #aea1f1;
+          color: #404040;
+          border-radius: 4px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
