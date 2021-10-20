@@ -1,20 +1,23 @@
 import React from "react";
-import { BrowserRouter, Route, Switch, HashRouter } from "react-router-dom";
 import Header from "./shared/Header";
-import TopSection from "./components/TopSection";
+import Home from "./components/Home";
 import About from "./components/About";
 import Services from "./components/Services";
+import Projects from "./components/Projects";
+import Contacts from "./components/Contacts";
 import Footer from "./shared/Footer";
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
       <Header />
-      <TopSection />
+      <Home />
       <About />
       <Services />
+      <Projects />
+      <Contacts />
       <Footer />
-    </BrowserRouter>
+    </>
   );
 }
 

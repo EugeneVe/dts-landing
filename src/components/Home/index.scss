@@ -1,0 +1,126 @@
+@font-face {
+  font-family: "Glass_TTY";
+  src: url("/assets/fonts/Glass_TTY_VT220.ttf");
+}
+@import "styles/globalVariables/index.scss";
+
+.home-wrapper {
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background: var(--home-gradient-bg);
+  .home {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    background: url("../../assets/images/airplanes.svg") no-repeat;
+    background-size: 65vh;
+    background-position: 10% 85%;
+    .middle {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      .left-side {
+        width: 50%;
+        @media screen and (max-width: 780px) {
+          width: 100%;
+        }
+        .company-name {
+          font-weight: 600;
+          font-size: 100%;
+          font-size: 3vw;
+          color: var(--second-text-color);
+          @media screen and (max-width: 780px) {
+            font-size: 6vw;
+          }
+        }
+        .company-slogan {
+          display: flex;
+          align-items: center;
+          .terminal {
+            ::placeholder {
+              font-family: "Glass_TTY";
+              font-size: 24px;
+              color: var(--hover-btn-color);
+              letter-spacing: 0.2em;
+              opacity: 1;
+            }
+            input {
+              font-family: "Glass_TTY";
+              font-size: 24px;
+              color: var(--hover-btn-color);
+              letter-spacing: 0.2em;
+              padding: 0;
+              border: none;
+              z-index: 1;
+              width: 100%;
+              caret-color: transparent;
+            }
+          }
+          .MuiOutlinedInput-notchedOutline {
+            outline: none;
+            border-width: 0;
+          }
+          .MuiFormControl-root {
+            min-width: 60%;
+          }
+          .slogan-text {
+            font-family: "Glass_TTY";
+            font-size: 24px;
+            color: var(--hover-btn-color);
+            letter-spacing: 0.2em;
+            z-index: 0;
+            .cursor {
+              animation: cursor 1s infinite;
+            }
+          }
+        }
+      }
+      .right-side {
+        .main-illustration {
+          width: 100%;
+          height: 70vh;
+        }
+        @media screen and (max-width: 780px) {
+          display: none;
+        }
+      }
+    }
+    .arrow-down {
+      position: absolute;
+      bottom: 85px;
+      animation: arrow-down 2s infinite;
+      .link {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@keyframes cursor {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes arrow-down {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(20px) scale(0.8);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

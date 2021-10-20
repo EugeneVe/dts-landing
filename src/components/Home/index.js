@@ -1,34 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import { TextField } from "@mui/material";
 import { Link } from "react-scroll";
 import ArrowDown from "../../assets/images/arrowDown.svg";
 import MainIllustration from "../../assets/imageComponents/mainIllustration";
 import "./index.scss";
 
-const TopSection = () => {
-  // const [burger, setBurger] = useState(false);
-  // const isBurger = () => setBurger(!burger);
-
+const Home = () => {
   return (
-    <div className="top-section-wrapper" id="home">
-      <div className="top-section">
+    <div className="home-wrapper" id="home">
+      <div className="home">
         <div className="middle">
           <div className="left-side">
             <div className="company-name">Deep Thought Solutions</div>
             <div className="company-slogan">
-              <TextField
-                autoFocus
-                name="terminal"
-                placeholder="101010_"
-                className="terminal"
-                // onFocus={(e) => {
-                //   isBurger();
-                //   e.target.value = "";
-                // }}
-              />
-              {/* <p className={`slogan-text ${burger ? "hide" : burger}`}>
+              <p className="slogan-text">
                 101010<span className="cursor">_</span>
-              </p> */}
+              </p>
+              <TextField autoFocus className="terminal" />
             </div>
           </div>
           <div className="right-side">
@@ -36,7 +24,7 @@ const TopSection = () => {
           </div>
         </div>
         <div className="arrow-down">
-          <Link className="link" activeClass="active" to="about" smooth spy offset={-99} duration={300}>
+          <Link className="link" activeClass="active" to="about" smooth spy offset={-59} duration={300}>
             <img src={ArrowDown} alt="" />
           </Link>
         </div>
@@ -45,4 +33,4 @@ const TopSection = () => {
   );
 };
 
-export default TopSection;
+export default Home;

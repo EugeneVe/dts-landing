@@ -4,7 +4,49 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(270.74deg, #161668 0%, #5f40c9 100%);
-  footer {
+  background: var(--home-gradient-bg);
+  .footer {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    color: var(--second-text-color);
+    @media screen and(max-width:780px) {
+      flex-direction: column;
+    }
+    .left-side {
+      width: 33%;
+      display: flex;
+      flex-wrap: wrap;
+      @media screen and(max-width:780px) {
+        width: 100%;
+        justify-content: center;
+      }
+      .social {
+        margin: 0 20px 5px 0;
+        .social-logo {
+          width: 30px;
+          transition: all 300ms;
+          &:hover {
+            transform: scale(1.2) translateY(-5px);
+            filter: drop-shadow(0 5px 5px rgba(22, 21, 104, 1));
+          }
+        }
+      }
+    }
+    .middle {
+      text-align: center;
+      width: 33%;
+      @media screen and(max-width:780px) {
+        width: 100%;
+      }
+    }
+    .right-side {
+      width: 33%;
+      @media screen and(max-width:780px) {
+        display: none;
+      }
+    }
   }
 }

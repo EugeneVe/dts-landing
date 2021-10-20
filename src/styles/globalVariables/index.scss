@@ -1,0 +1,42 @@
+:root {
+  --main-text-color: rgba(64, 64, 64, 1);
+  --second-text-color: rgba(255, 255, 255, 1);
+  --third-text-color: rgba(249, 249, 249, 1);
+  --home-gradient-bg: linear-gradient(287deg, rgba(21, 21, 103, 1) 0%, rgba(96, 64, 202, 1) 100.72%);
+  --burger-gradient-bg: linear-gradient(287deg, rgba(21, 21, 103, 0.6) 0%, rgba(96, 64, 202, 1) 100.72%);
+  --second-bg-color: rgba(255, 255, 255, 1);
+  --third-bg-color: rgba(249, 249, 249, 1);
+  --hover-btn-color: rgba(174, 161, 241, 1);
+  --transparent: transparent;
+}
+
+@mixin under-title {
+  margin-top: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(40px, 6vw, 80px);
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: -3px 0 2px rgba(0, 0, 0, 0.03), 0 3px 2px rgba(0, 0, 0, 0.03), 3px 0 2px rgba(0, 0, 0, 0.03),
+    0 -2px rgba(0, 0, 0, 0.05);
+}
+@mixin title {
+  color: var(--main-text-color);
+  position: absolute;
+  font-weight: bold;
+  font-size: clamp(20px, 4vw, 42px);
+  text-shadow: none;
+}
+@mixin scroll-styles {
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+    position: absolute;
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--main-text-color);
+    border-radius: 5px;
+  }
+}

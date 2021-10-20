@@ -1,9 +1,125 @@
+@import "styles/globalVariables/index.scss";
+
 .services-wrapper {
   width: 100%;
-  height: calc(100vh - 100px);
-  background: #f9f9f9;
+  height: 100%;
+  min-height: 100vh;
+  background: var(--third-bg-color);
   display: flex;
   justify-content: center;
   .services {
+    width: 80%;
+    .under-title {
+      @include under-title;
+      color: var(--third-text-color);
+      .title {
+        @include title;
+      }
+    }
+    .card-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: calc(100% - 165px);
+      @media screen and (max-width: 780px) {
+        flex-direction: column;
+        margin: 40px 0 60px 0;
+      }
+      .card {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 20vw;
+        height: 50vh;
+        background: var(--second-bg-color);
+        box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        transition: all 300ms;
+        &:not(:last-child) {
+          margin-right: 30px;
+          @media screen and (max-width: 780px) {
+            margin-right: 0;
+            margin-bottom: 30px;
+          }
+        }
+        @media screen and (max-width: 780px) {
+          width: 280px;
+          height: 360px;
+        }
+        &:hover {
+          transform: scale(1.3) translateY(-10px);
+          z-index: 1;
+          @media screen and (max-width: 350px) {
+            transform: scale(1.1) translateY(-10px);
+          }
+        }
+        .card-content {
+          display: flex;
+          flex-direction: column;
+          .card-title {
+            font-size: 3vw;
+            font-weight: 600;
+            color: var(--main-text-color);
+            text-align: center;
+            margin-bottom: 40px;
+            @media screen and (max-width: 780px) {
+              font-size: 8vw;
+            }
+          }
+          .card-logo {
+            text-align: center;
+            .card-logo-image {
+              width: 8vw;
+              @media screen and (max-width: 780px) {
+                width: 20vw;
+              }
+            }
+          }
+        }
+        .card-content-hover {
+          position: absolute;
+          overflow: hidden;
+          opacity: 0;
+        }
+        &:hover > .card-content {
+          position: absolute;
+        }
+        &:hover > .card-content > .card-title {
+          color: var(--second-text-color);
+        }
+        &:hover > .card-content-hover {
+          transition: all 200ms;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 4vh;
+          height: 100%;
+          opacity: 1;
+          backdrop-filter: blur(30px);
+          overflow: hidden;
+          .card-title {
+            font-size: 3vh;
+            font-weight: 600;
+            color: var(--main-text-color);
+            margin-bottom: 10px;
+            text-align: center;
+          }
+          .card-text {
+            font-size: 1.4vh;
+            color: var(--main-text-color);
+            height: 70%;
+            overflow-y: auto;
+            @include scroll-styles;
+          }
+          .dots {
+            position: absolute;
+            bottom: 50px;
+          }
+        }
+      }
+    }
   }
 }

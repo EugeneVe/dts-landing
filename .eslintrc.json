@@ -9,7 +9,6 @@
       }
     ],
     "arrow-body-style": "off",
-    "max-len": ["warn", 120],
     "react/prop-types": 0,
     "import/no-named-as-default": 0,
     "no-nested-ternary": 0,
@@ -28,7 +27,8 @@
     "no-underscore-dangle": "off",
     "no-use-before-define": "off",
     "jsx-a11y/no-noninteractive-element-interactions": "off",
-    "quotes": ["warn", "double"]
+    "quotes": ["warn", "double"],
+    "max-len": 0
   },
   "settings": {
     "import/resolver": {

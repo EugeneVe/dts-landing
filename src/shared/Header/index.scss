@@ -1,16 +1,13 @@
+@import "styles/globalVariables/index.scss";
+
 .header-wrapper {
   width: 100%;
   position: fixed;
-  background: linear-gradient(287deg, rgb(30, 26, 114) 0%, #6040ca 100.72%);
-  z-index: 1;
-  @media screen and (max-width: 900px) {
-    background: linear-gradient(287deg, rgb(34, 28, 120) 0%, #6040ca 100.72%);
-  }
-  @media screen and (max-width: 550px) {
-    background: linear-gradient(287deg, rgb(41, 32, 129) 0%, #6040ca 100.72%);
-  }
-  @media screen and (max-width: 370px) {
-    background: linear-gradient(287deg, rgb(47, 36, 137) 0%, #6040ca 100.72%);
+  background: transparent;
+  z-index: 3;
+  &.active {
+    background: var(--home-gradient-bg);
+    box-shadow: 0px 15px 25px 0px rgba(34, 60, 80, 0.4);
   }
   .header {
     width: 80%;
@@ -19,27 +16,159 @@
     justify-content: space-between;
     margin: auto;
     height: 100px;
+    transition: all 500ms;
+    &.active {
+      height: 60px;
+    }
+    .logo-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60%;
+      .logo {
+        height: 100%;
+        width: 100%;
+      }
+    }
     .menu {
+      @media screen and(max-width:780px) {
+        display: none;
+      }
       .link {
-        color: #fff;
+        color: var(--second-text-color);
         text-transform: uppercase;
         cursor: pointer;
         padding: 10px;
         font-weight: 500;
+        transition: all 500ms;
         &:hover {
-          height: 40px;
           border-radius: 4px;
-          background: #aea1f1;
-          color: #404040;
+          background: var(--hover-btn-color);
+          color: var(--main-text-color);
         }
         &:not(:last-child) {
           margin-right: 1.5vw;
         }
         &.active {
-          background: #aea1f1;
-          color: #404040;
+          background: var(--hover-btn-color);
+          color: var(--main-text-color);
           border-radius: 4px;
           font-weight: 500;
+        }
+        &:not(.active):active {
+          position: relative;
+          top: 3px;
+        }
+      }
+    }
+    .burger-menu {
+      display: none;
+    }
+    .burger-button {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .header-wrapper {
+    .header {
+      .burger-button {
+        display: block;
+        min-width: 25px;
+        padding: 0;
+        height: 25px;
+        background: transparent;
+        z-index: 2;
+        .burger {
+          cursor: pointer;
+          background: var(--second-bg-color);
+          position: relative;
+          height: 4px;
+          width: 25px;
+          border-radius: 2px;
+          &:before,
+          &:after {
+            content: "";
+            background: var(--second-bg-color);
+            position: absolute;
+            top: -10px;
+            left: 0;
+            width: 25px;
+            height: 4px;
+            border-radius: 2px;
+            transition: all 300ms;
+          }
+          &:before {
+            top: -10px;
+          }
+          &:after {
+            top: 10px;
+          }
+          &.active {
+            background: var(--transparent);
+            &:before,
+            &:after {
+              content: "";
+              top: 0;
+              left: 0;
+              height: 4px;
+              width: 25px;
+              border-radius: 2px;
+              position: absolute;
+              background: var(--second-bg-color);
+            }
+            &:before {
+              transform: rotate(-45deg);
+            }
+            &:after {
+              transform: rotate(45deg);
+            }
+          }
+        }
+      }
+      .burger-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        left: 0;
+        top: -100%;
+        width: 100%;
+        height: fit-content;
+        backdrop-filter: blur(20px);
+        background: var(--burger-gradient-bg);
+        border-radius: 8px;
+        box-shadow: 0px 15px 25px 0px rgba(34, 60, 80, 0.4);
+        z-index: 1;
+        transition: top 500ms;
+        padding: 20px;
+        &.open {
+          top: 0;
+        }
+        .link {
+          color: var(--second-text-color);
+          text-transform: uppercase;
+          cursor: pointer;
+          padding: 10px;
+          font-weight: 500;
+          transition: all 500ms;
+          margin-bottom: 20px;
+          &:hover {
+            border-radius: 4px;
+            background: var(--hover-btn-color);
+            color: var(--main-text-color);
+          }
+          &.active {
+            background: var(--hover-btn-color);
+            color: var(--main-text-color);
+            border-radius: 4px;
+            font-weight: 500;
+          }
+          &:not(.active):active {
+            position: relative;
+            top: 3px;
+          }
         }
       }
     }

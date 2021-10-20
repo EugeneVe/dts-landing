@@ -1,24 +1,24 @@
 import React from "react";
-import AOS from "aos";
 import Dots from "shared/Dots";
-import AboutIllustration from "assets/imageComponents/aboutIlluestration";
+import AOS from "aos";
+import ContactsIllustartion from "assets/imageComponents/contactsIllustration";
 import "aos/dist/aos.css";
 import "./index.scss";
 
-const About = () => {
+const Services = () => {
   AOS.init();
-  const title = "about";
+  const title = "contacts";
   return (
     <div className={`${title}-wrapper`} id={title}>
       <div className={title}>
         <div className="under-title">
-          {`${title} us`}
-          <div className="title">{`${title} us`}</div>
+          {title}
+          <div className="title">{title}</div>
         </div>
         <Dots />
         <div className="content">
           <div className="left-side" data-aos="fade-up">
-            <AboutIllustration className="about-illustration" />
+            <ContactsIllustartion className="contacts-illustration" />
           </div>
           <div className="right-side" data-aos="fade-left">
             <b>Lorem</b> ipsum dolor sit amet, consectetur adipiscing elit. Volutpat ultrices leo tellus sagittis, vitae
@@ -38,4 +38,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Services;
